@@ -6,6 +6,8 @@ requires-python = ">=3.14"
 dependencies = [
     "pydantic-settings>=2.6.0",
     "python-dotenv>=1.0.0",
+    "networkx>=3.4",
+    "pandas>=2.2",
 ]
 
 [dependency-groups]
@@ -33,6 +35,9 @@ show_missing = true
 [tool.ruff]
 line-length = 120
 target-version = "py314"
+# Only lint/format Python sources; leave Markdown (and its embedded code
+# blocks), config, and notebooks alone.
+include = ["*.py", "*.pyi"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "N", "ARG", "SIM", "ERA", "PLR", "C901"]
